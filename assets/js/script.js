@@ -18,7 +18,7 @@ var getWeatherConditions = function(city) {
         if (response.ok) {
             response.json().then(function(data) {    
                 
-                let currentCity = data.name
+               let currentCity = data.name
                 localStorage.setItem(""+data.name,data.name)
                 if (!cities.includes(currentCity)) {
                     cities.push(currentCity)    
@@ -28,12 +28,12 @@ var getWeatherConditions = function(city) {
                 localStorage.setItem("cities",JSON.stringify(cities))
                 displayDailyForecast(currentCity)
                 displayCurrentDay(data,currentCity)
-                getUVIndex(data.coord.lat,data.coord.lon)
+          getUVIndex(data.coord.lat,data.coord.lon)
             })
         } else {
-            alert("City was not found sorry")
-            return false
-        }
+        alert("City was not found sorry")
+         return false
+       }
     })
 }
 
